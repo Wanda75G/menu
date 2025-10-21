@@ -1,0 +1,77 @@
+*{
+    /* desbordarmiento */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f9f9f9;
+}
+nav.menu{
+    background: #D66D75;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #E29587, #D66D75);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #E29587, #D66D75); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.menu>ul{
+    list-style: none;
+    display: flex;
+    justify-content: left;
+}
+.menu ul li{
+    position: relative;
+}
+.menu>ul>li>a{
+    display: block;
+    /* espaciado padding */
+    padding: 15px 25px;
+    color: white;
+    /* quitar texto */
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    ;
+}
+.menu>ul>li>a:hover{
+    background-color: white;
+    color: #D66D75;
+}
+
+/* submenu */
+.menu .submenu{
+    position: absolute;
+    top: 100%;
+    background-color:#D66D75 ;
+    list-style: none;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0; 
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.menu .submenu li a{
+   /* sean bloques de contenido */
+    display: block;
+    padding: 12px 20px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    /*  evita que el texto se corte o haga corte de linea*/
+    white-space: nowrap;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}  
+
+.menu .submenu li a:hover{
+    background-color: white;
+    color: #D66D75;
+}
+
+.menu li.has-submenu:hover .submenu{
+    max-height: 500px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.has-submenu>a::after{
+    content: ' ▼';
+    font-size: 0.6rem;
+}
